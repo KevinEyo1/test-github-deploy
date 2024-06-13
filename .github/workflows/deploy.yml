@@ -9,8 +9,6 @@ jobs:
     name: test
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    permissions:
-        contents: read
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -18,3 +16,5 @@ jobs:
           node-version: '16'
       - run: npm i -g markbind-cli
       - run: markbind deploy --ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
