@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     name: test
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    permissions:
+        contents: read
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
